@@ -1,11 +1,10 @@
 import express, { request, response } from "express";
+import { routes } from "./routes";
 
 const app = express();
 
-app.get("/", (request, response) => {
-  return response.json({
-    message: "hello word",
-  });
-});
+app.use(express.json());
+
+app.use(routes);
 
 app.listen(3000, () => console.log("server runing"));
