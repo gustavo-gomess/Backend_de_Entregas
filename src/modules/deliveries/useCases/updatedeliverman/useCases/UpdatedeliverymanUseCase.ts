@@ -7,7 +7,7 @@ interface IUpdateDeliveryman {
 
 export class UpdateDeliverymanUseCase {
   async execute({ id_delivery, id_deliveryman }: IUpdateDeliveryman) {
-    const result = await prisma.deliveries.update({
+    const result = await prisma.deliveries.updateMany({
       where: {
         id: id_delivery,
       },
