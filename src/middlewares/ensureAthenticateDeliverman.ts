@@ -18,9 +18,6 @@ export async function ensureAuthenticateDeliverman(
     });
   }
 
-  // Bearer 9869a8a5bf86ac934c7ef27609a216e7
-  // [0] - Bearer
-  // [1] - 9869a8a5bf86ac934c7ef27609a216e7
   const [, token] = authHeader.split(" ");
 
   try {
@@ -29,7 +26,7 @@ export async function ensureAuthenticateDeliverman(
       "9869a8a5bf86ac934c7ef27609a216e7"
     ) as IPayload;
 
-    request.id_client = sub;
+    request.id_deliveryman = sub;
 
     return next();
   } catch (err) {
